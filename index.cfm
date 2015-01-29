@@ -20,7 +20,7 @@
 	<cfset k=allAppKeysIt.next()/>
 	<cfset appScope=appTracker.getApplicationScope(k)/>
 
-	<cfhttp url="http://193.133.125.6/utils/ramBrowser/sizeOfApp.cfm?appName=#appScope.applicationname#"
+	<cfhttp url="http://#cgi.server_name##getDirectoryFromPath(cgi.script_name)#/sizeOfApp.cfm?appName=#appScope.applicationname#"
 		timeout="10"
 		result="res"
 	/>
